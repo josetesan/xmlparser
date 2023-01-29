@@ -3,5 +3,4 @@ package es.josetesan.prescription.model;
 import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @RegisterForReflection
-public record Laboratorio(
-    Integer codigolaboratorio, String laboratorio, String direccion, String localidad) {}
+public record Laboratorio( Integer codigolaboratorio, String laboratorio, String direccion,String codigopostal,String localidad,String cif) {}

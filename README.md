@@ -50,3 +50,11 @@ If you want to learn more about building native executables, please consult http
 ## Related Guides
 
 - Camel StAX ([guide](https://camel.apache.org/camel-quarkus/latest/reference/extensions/stax.html)): Process XML payloads by a SAX ContentHandler
+
+## How to run
+
+ - Locate the Prescription.xml file, and then run the following
+```bash
+export PRESCRIPTION_HOME=<path_to_Prescription.xml file>
+run app
+``` 
