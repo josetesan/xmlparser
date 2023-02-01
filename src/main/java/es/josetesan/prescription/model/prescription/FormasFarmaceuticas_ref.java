@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @RegisterForReflection
 @Data
 @NoArgsConstructor
-public class FormasFarmaceuticas {
+public class FormasFarmaceuticas_ref {
   String cod_forfar;
   String cod_forfar_simplificada;
   String nro_pactiv;
@@ -18,7 +18,7 @@ public class FormasFarmaceuticas {
   List<ComposicionPa> composicion_pa;
 
   @JacksonXmlElementWrapper(useWrapping = false)
-  List<Excipiente> excipientes;
+  List<Excipiente_ref> excipientes;
 
-  ViasAdministracion viasadministracion;
+  ViasAdministracion_ref viasadministracion;
 }

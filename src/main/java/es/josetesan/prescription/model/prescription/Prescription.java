@@ -56,9 +56,9 @@ public class Prescription {
   GTin gtin;
 
   @XmlElement(name = "formasfarmaceuticas")
-  FormasFarmaceuticas formasFarmaceuticas;
+  FormasFarmaceuticas_ref formasFarmaceuticas;
 
-  Atc atc;
+  Atc_ref atc;
 
   @XmlElement(name = "problemassuministro")
   ProblemasSuministro problemassuministro;
