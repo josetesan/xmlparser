@@ -1,8 +1,7 @@
 package es.josetesan.prescription.model;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
+import org.neo4j.driver.types.Node;
 
 @RegisterForReflection
 public record PrincipiosActivos(
@@ -10,8 +9,14 @@ public record PrincipiosActivos(
     String codigoprincipioactivo,
     String principioactivo,
     String listapsicotropo,
-    String listaestupefaciente)
-    implements Processor {
-  @Override
-  public void process(Exchange exchange) throws Exception {}
+    String listaestupefaciente) {
+
+  public static PrincipiosActivos from(Node node) {
+    return new PrincipiosActivos(
+        node.get("numero").asInt(),
+        node.get("codigo").asString(),
+        node.get("principioactivo").asString(),
+        node.get("listapsicotropo").asString(),
+        node.get("listaestupefaciente").asString());
+  }
 }

@@ -1,12 +1,13 @@
 package es.josetesan.prescription.model;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
+import org.neo4j.driver.types.Node;
 
 @RegisterForReflection
-public record SituacionRegistro(Integer codigosituacionregistro, String situacionregistro)
-    implements Processor {
-  @Override
-  public void process(Exchange exchange) throws Exception {}
+public record SituacionRegistro(Integer codigosituacionregistro, String situacionregistro) {
+
+  public static SituacionRegistro from(Node node) {
+
+    return new SituacionRegistro(node.get("codigo").asInt(), node.get("situacion").asString());
+  }
 }

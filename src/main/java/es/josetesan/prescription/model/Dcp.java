@@ -1,12 +1,16 @@
 package es.josetesan.prescription.model;
 
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
+import org.neo4j.driver.types.Node;
 
 @RegisterForReflection
-public record Dcp(Long codigodcp, String nombredcp, Long codigodcsa, String nombrecortodcp)
-    implements Processor {
-  @Override
-  public void process(Exchange exchange) throws Exception {}
+public record Dcp(Long codigodcp, String nombredcp, Long codigodcsa, String nombrecortodcp) {
+
+  public static Dcp from(Node node) {
+    return new Dcp(
+        node.get("codigo").asLong(),
+        node.get("nombre").asString(),
+        node.get("codigodcsa").asLong(),
+        node.get("nombrecorto").asString());
+  }
 }
