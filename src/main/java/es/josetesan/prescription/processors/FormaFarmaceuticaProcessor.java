@@ -20,7 +20,7 @@ public class FormaFarmaceuticaProcessor {
       """
      MATCH (fs: FORMA_FARMACEUTICA_SIMPLIFICADA {codigo: $codigosimplificada})
      WITH fs
-     MERGE (f:FORMA_FARMACEUTICA {codigo: $codigo, forma: $forma,codigosimplificada: fs.codigo}) 
+     MERGE (f:FORMA_FARMACEUTICA {codigo: $codigo, forma: $forma,codigosimplificada: fs.codigo})
      WITH f
      MERGE (f)-[:HAS]->(fs)
   """;

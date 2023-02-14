@@ -16,7 +16,6 @@ import org.neo4j.driver.reactive.ReactiveTransactionContext;
 
 public class DcsaProcessor {
 
-
   public static final String CREATE_DCSA =
       "CREATE (d:DCSA {codigo: $codigo,nombre: $nombre})  RETURN d";
 

@@ -16,9 +16,7 @@ import org.neo4j.driver.reactive.ReactiveTransactionContext;
 
 public class DcpProcessor {
 
-
-
-    /*
+  /*
   MATCH (d:DCP) MATCH (dc:DCSA {codigo: d.codigodcsa}) MERGE (d)-[:IS_A]->(dc)
    */
 
@@ -65,6 +63,6 @@ public class DcpProcessor {
             "codigodcsa",
             dcp.codigodcsa(),
             "nombrecorto",
-            dcp.nombrecortodcp()==null?"":dcp.nombrecortodcp()));
+            dcp.nombrecortodcp() == null ? "" : dcp.nombrecortodcp()));
   }
 }

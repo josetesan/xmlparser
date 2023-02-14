@@ -64,7 +64,9 @@ public class PrincipiosProcessor {
             "principioactivo",
             principiosActivos.principioactivo(),
             "listapsicotropo",
-            principiosActivos.listapsicotropo() == null ? "N/A" : principiosActivos.listapsicotropo(),
+            principiosActivos.listapsicotropo() == null
+                ? "N/A"
+                : principiosActivos.listapsicotropo(),
             "listaestupefaciente",
             principiosActivos.listaestupefaciente() == null
                 ? "N/A"
